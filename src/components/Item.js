@@ -26,11 +26,9 @@ export default function Item({ dato, sumar }) {
         En stock:
         {numero > 0 ? numero : <span>Agotado</span>}
       </h5>
-      {numero > 0 ? (
-        <button onClick={modificar}>COMPRAR</button>
-      ) : (
-        <button disabled>SIN STOCK</button>
-      )}
+      <button disabled={numero <= 0} onClick={modificar}>
+        {numero > 0 ? "COMPRAR" : "SIN STOCK"}
+      </button>
     </div>
   );
 }
